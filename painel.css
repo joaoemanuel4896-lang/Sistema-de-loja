@@ -84,6 +84,63 @@ body {
     body {
         flex-direction: column;
     }
+    /* CAIXA DE VENDAS */
+
+.caixa {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 700px;
+}
+
+.caixa h2 {
+    color: #0b1f3a;
+    margin-bottom: 20px;
+}
+
+.caixa input,
+.caixa select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.caixa button {
+    width: 100%;
+    padding: 12px;
+    background: #0b8f32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.caixa button:hover {
+    background: #066822;
+}
+
+#carrinho {
+    background: #f2f5f9;
+    min-height: 80px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.total {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
     .menu {
         width: 100%;
