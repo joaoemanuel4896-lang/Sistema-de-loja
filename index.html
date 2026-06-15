@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Borracharia - Sistema de Caixa</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🛞 Sistema da Borracharia</h1>
+
+<section>
+<h2>Cadastrar Mercadoria</h2>
+
+<input type="text" id="nome" placeholder="Nome do produto">
+
+<input type="text" id="fornecedor" 
+placeholder="Fornecedor">
+
+<input type="number" id="compra" 
+placeholder="Preço de compra">
+
+<input type="number" id="venda"
+placeholder="Preço de venda">
+
+<input type="number" id="quantidade"
+placeholder="Quantidade">
+
+<button onclick="cadastrar()">
+Cadastrar
+</button>
+</section>
+
+
+<section>
+<h2>Estoque</h2>
+
+<div id="estoque"></div>
+
+</section>
+
+
+<section>
+<h2>Venda</h2>
+
+<input type="text" id="produtoVenda"
+placeholder="Produto">
+
+<input type="number" id="qtdVenda"
+placeholder="Quantidade">
+
+<button onclick="vender()">
+Vender
+</button>
+
+</section>
+
+
+<section>
+<h2>Caixa</h2>
+
+<p>
+Total vendido:
+R$ <span id="caixa">0</span>
+</p>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
