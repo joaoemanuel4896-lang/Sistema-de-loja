@@ -197,18 +197,43 @@ function abrirTela(tela) {
     }
 
     else if (tela === "estoque") {
-        area.innerHTML = `
-        <h2>📦 Estoque</h2>
+    area.innerHTML = `
+    <div class="estoque">
 
-        <button onclick="cadastrarProduto()">
-        + Novo Produto
-        </button>
+    <h2>📦 Controle de Estoque</h2>
 
-        <div id="listaProdutos">
-        Nenhum produto cadastrado.
-        </div>
-        `;
-    }
+    <input type="text" id="nomeProduto"
+    placeholder="Nome do produto">
+
+    <input type="text" id="fornecedor"
+    placeholder="Fornecedor">
+
+    <input type="number" id="precoCompra"
+    placeholder="Preço de compra">
+
+    <input type="number" id="precoVenda"
+    placeholder="Preço de venda">
+
+    <input type="number" id="quantidade"
+    placeholder="Quantidade em estoque">
+
+    <button onclick="cadastrarProduto()">
+    ➕ Cadastrar Produto
+    </button>
+
+    <hr>
+
+    <h3>Produtos cadastrados</h3>
+
+    <div id="listaProdutos">
+    Nenhum produto cadastrado.
+    </div>
+
+    </div>
+    `;
+
+    listarProdutos();
+}
 
     else if (tela === "funcionarios") {
         area.innerHTML = `
