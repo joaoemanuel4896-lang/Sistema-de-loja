@@ -252,3 +252,89 @@ function abrirTela(tela) {
     }
 
 }
+// Cadastrar produto
+function cadastrarProduto() {
+
+    let nome = document.getElementById("nomeProduto").value;
+    let fornecedor = document.getElementById("fornecedor").value;
+    let compra = document.getElementById("precoCompra").value;
+    let venda = document.getElementById("precoVenda").value;
+    let quantidade = document.getElementById("quantidade").value;
+
+    if (
+        nome == "" ||
+        fornecedor == "" ||
+        compra == "" ||
+        venda == "" ||
+        quantidade == ""
+    ) {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    let produtos =
+    JSON.parse(localStorage.getItem("produtos")) || [];
+
+    produtos.push({
+        nome: nome,
+        fornecedor: fornecedor,
+        compra: Number(compra),
+        venda: Number(venda),
+        quantidade: Number(quantidade)
+    });
+
+    localStorage.setItem(
+        "produtos",
+        JSON.stringify(produtos)
+    );
+
+    alert("Produto cadastrado com sucesso!");
+
+    listarProdutos();
+
+    document.getElementById("nomeProduto").value = "";
+    document.getElementById("fornecedor").value = "";
+    document.getElementById("precoCompra").value = "";
+    document.getElementById("precoVenda").value = "";
+    document.getElementById("quantidade").value = "";
+}
+
+
+// Mostrar produtos na tela
+function listarProdutos() {
+
+    let lista =
+    document.getElementById("listaProdutos");
+
+    let produtos =
+    JSON.parse(localStorage.getItem("produtos")) || [];
+
+
+    if (produtos.length == 0) {
+        lista.innerHTML =
+        "Nenhum produto cadastrado.";
+        return;
+    }
+
+    let html = "";
+
+    produtos.forEach((produto, i) => {
+
+        html += `
+        <div>
+        <h4>${produto.nome}</h4>
+
+        <p>
+        Fornecedor: ${produto.fornecedor}<br>
+        Compra: R$ ${produto.compra}<br>
+        Venda: R$ ${produto.venda}<br>
+        Quantidade: ${produto.quantidade}
+        </p>
+
+        </div>
+        <hr>
+        `;
+    });
+
+    lista.innerHTML = html;
+}
