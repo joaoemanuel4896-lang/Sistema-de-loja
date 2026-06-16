@@ -183,3 +183,47 @@ function finalizarVenda() {
     atualizarCarrinho();
 
 }
+// Troca as telas do sistema
+function abrirTela(tela) {
+
+    let area = document.getElementById("areaTrabalho");
+
+    if (tela === "caixa") {
+        area.innerHTML = `
+        <h2>💵 Caixa de Vendas</h2>
+
+        <p>Em breve aqui teremos o caixa completo.</p>
+        `;
+    }
+
+    else if (tela === "estoque") {
+        area.innerHTML = `
+        <h2>📦 Estoque</h2>
+
+        <button onclick="cadastrarProduto()">
+        + Novo Produto
+        </button>
+
+        <div id="listaProdutos">
+        Nenhum produto cadastrado.
+        </div>
+        `;
+    }
+
+    else if (tela === "funcionarios") {
+        area.innerHTML = `
+        <h2>👨‍💼 Funcionários</h2>
+
+        <p>Gerencie os funcionários da borracharia.</p>
+        `;
+    }
+
+    else if (tela === "relatorios") {
+        area.innerHTML = `
+        <h2>📊 Relatórios</h2>
+
+        <p>Veja as vendas e lucros da empresa.</p>
+        `;
+    }
+
+}
